@@ -1,40 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# PapeX Receipt Populator
 
-## Getting Started
+A simple receipt generator system for the PapeX App built with Next.js, TypeScript, Firebase, and Tailwind CSS. This application allows admins to create and store receipts with multiple line items, automatic total calculations, and secure user authentication. This project is for demo and marketing purposes only!
 
-First, run the development server:
+## Features
 
+- 🔐 Secure user authentication with Firebase
+- 📝 Create detailed receipts with multiple line items
+- 💰 Automatic total calculation
+- 🌐 Multi-currency support
+- 🏪 Merchant management
+- 🔄 Real-time data synchronization with Firebase
+- 📱 Responsive design with Tailwind CSS
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+- Node.js (v14.0.0 or higher)
+- npm (v6.0.0 or higher)
+- Git
+
+## Environment Setup
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/papex-receipt-populator.git
+cd papex-receipt-populator
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+4. Create a `.env.local` file in the project root with your Firebase configuration:
+```env
+NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Running the Application
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Start the development server:
+```bash
+npm run dev
+```
 
-## Learn More
+2. Open your browser and navigate to:
+```
+http://localhost:3000
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Usage Guide
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+### Authentication
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Create an account or sign in using your email and password
+2. The system will automatically redirect you to the receipt creation page after successful authentication
 
-## Deploy on Vercel
+### Creating Receipts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Enter the merchant name
+2. Select the currency (USD, EUR, or GBP)
+3. Add line items:
+   - Enter item name
+   - Enter item price
+   - Click "Add Line Item" for additional items
+4. The total amount is automatically calculated
+5. Click "Create Receipt" to save
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+### Security Features
+
+- Protected routes require authentication
+- Secure data storage in Firebase
+- User-specific receipt access
+- Automatic session management
+
+## Project Structure
+
+```
+papex-receipt-populator/
+├── components/          # React components
+├── contexts/           # Context providers
+├── lib/               # Firebase and utility functions
+├── pages/             # Next.js pages
+├── styles/            # Global styles and Tailwind config
+├── public/            # Static assets
+└── package.json       # Project dependencies
+```
+
+## Development
+
+### Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build production bundle
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint
+
+### Technology Stack
+
+- **Frontend Framework**: Next.js with TypeScript
+- **Styling**: Tailwind CSS
+- **Form Management**: React Hook Form
+- **Backend/Database**: Firebase (Authentication & Firestore)
+- **Development Tools**: ESLint, PostCSS
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
